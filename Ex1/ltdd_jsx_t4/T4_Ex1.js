@@ -98,7 +98,7 @@ const T4_Ex1 = () => {
               fontSize: 16,
               paddingHorizontal: 15,
             }}>
-              {quantity}</Text>
+              {(donGia * quantity).toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} đ</Text>
 
             <TouchableOpacity 
               style={{
