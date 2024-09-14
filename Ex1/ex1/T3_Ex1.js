@@ -2,9 +2,10 @@ import React from 'react';
 import {Text, Image, Button, View, TouchableOpacity, StyleSheet} from 'react-native';
 import {useState} from 'react';
 import BookIcon from './bookicon.png';
-import NumberIcon from './numbericon.png'
+import NumberIcon from './numbericon.png';
 const T4_Ex1 = () => {
   const [quantity, setQuantity] = useState(1);
+  var donGia = 141.800;
   return(
     <View style = {{
       flex: 1,
@@ -33,14 +34,12 @@ const T4_Ex1 = () => {
           marginLeft: 20,
         }}>
           <Text style={{
-            fontFamily: 'Roboto',
             fontSize: 12,
             fontWeight: '700',
           }}>
             Nguyên hàm tích phân và ứng dụng</Text>
 
           <Text style={{
-            fontFamily: 'Roboto',
             fontSize: 12,
             fontWeight: '700',
             marginTop: 8,
@@ -49,17 +48,15 @@ const T4_Ex1 = () => {
           </Text>
 
           <Text style={{
-            fontFamily: 'Roboto',
             fontSize: 18,
             fontWeight: '700',
             color: 'red',
             marginTop: 8,
           }}>
-            141.800 đ
+            {(donGia * quantity).toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} đ
           </Text>
 
           <Text style={{
-            fontFamily: 'Roboto',
             fontSize: 12,
             fontWeight: '700',
             color: 'gray',
@@ -83,7 +80,7 @@ const T4_Ex1 = () => {
               alignItems: 'center',
               borderRadius: 2,
             }}
-              onPress = {() => setQuantity(Math.max(quantity - 1, 1))}
+              onPress = {() => setQuantity(Math.max(quantity - 1, 0))}
             >
               <Text style={{
                 textAlign: 'center',
@@ -93,12 +90,11 @@ const T4_Ex1 = () => {
             </TouchableOpacity>
 
             <Text style={{
-              fontFamily: 'Roboto',
               fontWeight: '700',
               fontSize: 16,
               paddingHorizontal: 15,
             }}>
-              {(donGia * quantity).toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} đ</Text>
+              {quantity}</Text>
 
             <TouchableOpacity 
               style={{
@@ -119,7 +115,6 @@ const T4_Ex1 = () => {
             </TouchableOpacity>
 
             <Text style={{
-              fontFamily: 'Roboto',
               fontSize: 12,
               fontWeight: '700',
               color: 'rgba(19, 79, 236, 1)',
@@ -140,7 +135,6 @@ const T4_Ex1 = () => {
         backgroundColor: 'white',
       }}>
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 12,
           paddingRight: 10
@@ -171,7 +165,6 @@ const T4_Ex1 = () => {
         borderWidth: 2
       }}> 
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 18,
           textAlign: 'center',
@@ -185,7 +178,6 @@ const T4_Ex1 = () => {
         borderWidth: 2
       }}> 
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 20,
           textAlign: 'center',
@@ -213,14 +205,13 @@ const T4_Ex1 = () => {
         marginBottom: 10
       }}>
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 12,
           textAlign: 'center',
         }}>Bạn có phiếu quà tặng Tiki/Got it/ Urbox?</Text>
 
         <Text style = {{
-          fontFamily: 'Roboto',
+
           fontWeight: 700,
           fontSize: 12,
           textAlign: 'center',
@@ -243,19 +234,18 @@ const T4_Ex1 = () => {
           backgroundColor: 'white',
         }}>
           <Text style = {{
-            fontFamily: 'Roboto',
+
             fontWeight: 700,
             fontSize: 18,
             textAlign: 'center',
           }}>Tạm tính</Text>
 
           <Text style = {{
-            fontFamily: 'Roboto',
             fontWeight: 700,
             fontSize: 18,
             textAlign: 'center',
             color: 'red',
-          }}>141.800 đ</Text>
+          }}>{(donGia * quantity).toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} đ</Text>
         </View>
       </View>
     </View>
@@ -274,18 +264,16 @@ const T4_Ex1 = () => {
         paddingBottom: 20
       }}>
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 18,
           color: 'rgba(128, 128, 128, 1)'
         }}>Thành tiền</Text> 
 
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 18,
           color: 'red'
-        }}>141.800 đ</Text> 
+        }}>{(donGia * quantity).toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} đ</Text> 
       </View>
 
       <TouchableOpacity style = {{
@@ -294,7 +282,6 @@ const T4_Ex1 = () => {
         backgroundColor: 'rgba(229, 57, 53, 1)',
       }}>
         <Text style = {{
-          fontFamily: 'Roboto',
           fontWeight: 700,
           fontSize: 20,
           color: 'white',
@@ -309,20 +296,3 @@ const T4_Ex1 = () => {
   );
 };
 export default T4_Ex1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
